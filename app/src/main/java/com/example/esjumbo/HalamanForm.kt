@@ -58,18 +58,18 @@ fun HalamanForm(){
         Spacer(modifier = Modifier.padding(16.dp))
 
         OutlinedTextField(
-            value = alamatTxt,
-            onValueChange = {alamatTxt = it},
-            modifier = Modifier.fillMaxWidth(),
-            label = { Text(stringResource(R.string.alamat))})
-        Spacer(modifier = Modifier.padding(16.dp))
-
-        OutlinedTextField(
             value = teleponTxt,
             onValueChange = {teleponTxt = it},
             modifier = Modifier.fillMaxWidth(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             label = { Text(stringResource(R.string.notelp))})
+        Spacer(modifier = Modifier.padding(16.dp))
+
+        OutlinedTextField(
+            value = alamatTxt,
+            onValueChange = {alamatTxt = it},
+            modifier = Modifier.fillMaxWidth(),
+            label = { Text(stringResource(R.string.alamat))})
         Spacer(modifier = Modifier.padding(16.dp))
 
         Row {
