@@ -2,9 +2,11 @@ package com.example.esjumbo
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -60,6 +62,16 @@ fun HalamanForm(){
             onValueChange = {teleponTxt = it},
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             label = { Text(stringResource(R.string.notelp))})
+
+        Row {
+            Button(onClick = { /*TODO*/ }) {
+                Text(text = stringResource(id = R.string.cancel))
+            }
+
+            Button(onClick = { /*TODO*/ }) {
+                Text(text = stringResource(id = R.string.selanjutnya))
+            }
+        }
 
     }
 }
