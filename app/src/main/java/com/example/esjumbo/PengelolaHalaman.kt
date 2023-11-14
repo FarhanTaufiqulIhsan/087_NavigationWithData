@@ -84,7 +84,7 @@ fun EsJumboApp(
                     onSubmitButtonClick = {
                         viewModel.setContact(it)
                         navController.navigate(PengelolaHalaman.Rasa.name)},
-                    onCancelButtonClick = { }
+                    onCancelButtonClick = { cancelOrderAndNavigateToHome(navController) }
                 )
             }
             composable(route = PengelolaHalaman.Rasa.name) {
@@ -96,7 +96,7 @@ fun EsJumboApp(
                     onSelectionChanged = { viewModel.setRasa(it) },
                     onConfirmButtonClicked = { viewModel.setJumlah(it) },
                     onNextButtonClicked = { navController.navigate(PengelolaHalaman.Summary.name) },
-                    onCancelButtonClicked = { cancelOrderAndNavigateToHome(viewModel, navController) }
+                    onCancelButtonClicked = { cancelOrderAndNavigateToForm(viewModel, navController) }
                 )
             }
             composable(route = PengelolaHalaman.Summary.name) {
@@ -109,11 +109,16 @@ fun EsJumboApp(
     }
 }
 
-private fun cancelOrderAndNavigateToHome(
+private fun cancelOrderAndNavigateToForm(
     viewModel: OrderViewModel,
     navController: NavHostController
-) {
+){
     viewModel.resetOrder()
+    navController.popBackStack(PengelolaHalaman.Formulir.name, inclusive = false)
+}
+private fun cancelOrderAndNavigateToHome(
+    navController: NavHostController
+) {
     navController.popBackStack(PengelolaHalaman.Home.name, inclusive = false)
 }
 
