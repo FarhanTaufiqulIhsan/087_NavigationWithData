@@ -3,6 +3,7 @@ package com.example.esjumbo
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
@@ -46,27 +47,33 @@ fun HalamanForm(){
             fontSize = 25.sp,
             fontWeight = FontWeight.Bold
         )
+        Spacer(modifier = Modifier.padding(16.dp))
 
         OutlinedTextField(
             value = namaTxt,
             onValueChange = {namaTxt = it},
             label = { Text(stringResource(R.string.nama))})
+        Spacer(modifier = Modifier.padding(16.dp))
 
         OutlinedTextField(
             value = alamatTxt,
             onValueChange = {alamatTxt = it},
             label = { Text(stringResource(R.string.alamat))})
+        Spacer(modifier = Modifier.padding(16.dp))
 
         OutlinedTextField(
             value = teleponTxt,
             onValueChange = {teleponTxt = it},
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             label = { Text(stringResource(R.string.notelp))})
+        Spacer(modifier = Modifier.padding(16.dp))
 
         Row {
             Button(onClick = { /*TODO*/ }) {
                 Text(text = stringResource(id = R.string.cancel))
             }
+
+            Spacer(modifier = Modifier.padding(50.dp))
 
             Button(onClick = { /*TODO*/ }) {
                 Text(text = stringResource(id = R.string.selanjutnya))
