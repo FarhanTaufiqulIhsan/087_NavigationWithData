@@ -31,6 +31,8 @@ fun HalamanForm(){
     var alamatTxt by remember { mutableStateOf("") }
     var teleponTxt by remember { mutableStateOf("") }
 
+    var ListDataTxt: MutableList<String> = mutableListOf(namaTxt,alamatTxt,teleponTxt)
+
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
