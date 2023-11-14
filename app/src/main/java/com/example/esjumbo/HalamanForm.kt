@@ -28,9 +28,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
-@Preview
 @Composable
-fun HalamanForm(){
+fun HalamanForm(
+    onSubmitButtonClick: (MutableList<String>) -> Unit,
+    onCancelButtonClick: (MutableList<String>) -> Unit
+){
     var namaTxt by rememberSaveable { mutableStateOf("") }
     var alamatTxt by remember { mutableStateOf("") }
     var teleponTxt by remember { mutableStateOf("") }
@@ -73,13 +75,13 @@ fun HalamanForm(){
         Spacer(modifier = Modifier.padding(16.dp))
 
         Row {
-            Button(onClick = { /*TODO*/ }) {
+            Button(onClick = { onCancelButtonClick(ListDataTxt) }) {
                 Text(text = stringResource(id = R.string.cancel))
             }
 
             Spacer(modifier = Modifier.padding(50.dp))
 
-            Button(onClick = { /*TODO*/ }) {
+            Button(onClick = { onSubmitButtonClick(ListDataTxt) }) {
                 Text(text = stringResource(id = R.string.selanjutnya))
             }
         }
