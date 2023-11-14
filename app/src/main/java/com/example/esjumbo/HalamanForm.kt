@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
@@ -52,18 +53,21 @@ fun HalamanForm(){
         OutlinedTextField(
             value = namaTxt,
             onValueChange = {namaTxt = it},
+            modifier = Modifier.fillMaxWidth(),
             label = { Text(stringResource(R.string.nama))})
         Spacer(modifier = Modifier.padding(16.dp))
 
         OutlinedTextField(
             value = alamatTxt,
             onValueChange = {alamatTxt = it},
+            modifier = Modifier.fillMaxWidth(),
             label = { Text(stringResource(R.string.alamat))})
         Spacer(modifier = Modifier.padding(16.dp))
 
         OutlinedTextField(
             value = teleponTxt,
             onValueChange = {teleponTxt = it},
+            modifier = Modifier.fillMaxWidth(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
             label = { Text(stringResource(R.string.notelp))})
         Spacer(modifier = Modifier.padding(16.dp))
