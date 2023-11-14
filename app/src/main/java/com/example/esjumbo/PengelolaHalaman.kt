@@ -26,6 +26,7 @@ import com.example.esjumbo.data.SumberData
 
 enum class PengelolaHalaman {
     Home,
+    Formulir,
     Rasa,
     Summary
 }
@@ -75,7 +76,15 @@ fun EsJumboApp(
         {
             composable(route = PengelolaHalaman.Home.name) {
                 HalamanHome(
-                    onNextButtonClicked = {navController.navigate(PengelolaHalaman.Rasa.name)}
+                    onNextButtonClicked = {navController.navigate(PengelolaHalaman.Formulir.name)}
+                )
+            }
+            composable(route = PengelolaHalaman.Formulir.name) {
+                HalamanForm(
+                    onSubmitButtonClick = {
+                        viewModel.setContact(it)
+                        navController.navigate(PengelolaHalaman.Rasa.name)},
+                    onCancelButtonClick = { }
                 )
             }
             composable(route = PengelolaHalaman.Rasa.name) {
