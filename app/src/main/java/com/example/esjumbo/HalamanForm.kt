@@ -56,7 +56,8 @@ fun HalamanForm(
             value = namaTxt,
             onValueChange = {namaTxt = it},
             modifier = Modifier.fillMaxWidth(),
-            label = { Text(stringResource(R.string.nama))})
+            label = { Text(stringResource(R.string.nama))},
+            placeholder = {Text(text= "Masukkan nama")})
         Spacer(modifier = Modifier.padding(16.dp))
 
         OutlinedTextField(
@@ -64,14 +65,16 @@ fun HalamanForm(
             onValueChange = {teleponTxt = it},
             modifier = Modifier.fillMaxWidth(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            label = { Text(stringResource(R.string.notelp))})
+            label = { Text(stringResource(R.string.notelp))},
+            placeholder = {Text(text="Masukkan Nomor Telepon")})
         Spacer(modifier = Modifier.padding(16.dp))
 
         OutlinedTextField(
             value = alamatTxt,
             onValueChange = {alamatTxt = it},
             modifier = Modifier.fillMaxWidth(),
-            label = { Text(stringResource(R.string.alamat))})
+            label = { Text(stringResource(R.string.alamat))},
+            placeholder = {Text(text="Masukkan Alamat")})
         Spacer(modifier = Modifier.padding(16.dp))
 
         Row {
